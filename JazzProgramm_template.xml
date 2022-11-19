@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  JAZZ live AARAU Saison-Programm -->
+ 
+<Saison> 
+  <YearAutum>2018</YearAutum>
+  <YearSpring>2019</YearSpring>
+  <PublishProgram>FALSE</PublishProgram>
+<!--  <Concerts>  -->
+    <!--  Konzert  1 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>7</Day>
+      <Month>10</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 01</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  1 End -->
+    <!--  Konzert  2 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>21</Day>
+      <Month>10</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 02</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  2 End -->
+    <!--  Konzert  3 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>4</Day>
+      <Month>11</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 03</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  3 End -->
+    <!--  Konzert  4 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>18</Day>
+      <Month>11</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 04</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  4 End -->
+    <!--  Konzert  5 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>2</Day>
+      <Month>12</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 05</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  5 End -->
+    <!--  Konzert  6 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>16</Day>
+      <Month>12</Month>
+      <Year>2018</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 06</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+	</Concert>
+    <!--  Konzert  6 End -->
+    <!--  Konzert  7 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>13</Day>
+      <Month>1</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 07</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  7 End -->
+    <!--  Konzert  8 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>27</Day>
+      <Month>1</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 08</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  8 End -->
+    <!--  Konzert  9 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>10</Day>
+      <Month>2</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 09</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert  9 End -->
+    <!--  Konzert 10 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>24</Day>
+      <Month>2</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 10</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert 10 End -->
+    <!--  Konzert 11 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>10</Day>
+      <Month>3</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 11</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert 11 End -->
+    <!--  Konzert 12 Start -->
+    <Concert>
+      <DayName>Samstag</DayName>
+      <Day>24</Day>
+      <Month>3</Month>
+      <Year>2019</Year>
+      <TimeStartHour>15</TimeStartHour>
+	  <TimeStartMinute>30</TimeStartMinute>
+      <TimeEndHour>17</TimeEndHour>
+	  <TimeEndMinute>15</TimeEndMinute>
+      <Place>Spaghetti Factory</Place>
+      <Street>Metzgergasse 8</Street>
+      <City>Aarau</City>
+      <BandName>Band 12</BandName>
+      <ShortText>NotYetSetNodeValue</ShortText>
+      <AdditionalText>NotYetSetNodeValue</AdditionalText>
+	  <LabelAdditionalText>NotYetSetNodeValue</LabelAdditionalText>
+      <PosterBigSize>NotYetSetNodeValue</PosterBigSize>
+      <PosterMidSize>NotYetSetNodeValue</PosterMidSize>
+	  <PosterSmallSize>NotYetSetNodeValue</PosterSmallSize>
+      <BandWebsite>NotYetSetNodeValue</BandWebsite>
+      <SoundSample>NotYetSetNodeValue</SoundSample>
+	  <PhotoGalleryOne>NotYetSetNodeValue</PhotoGalleryOne>
+	  <PhotoGalleryTwo>NotYetSetNodeValue</PhotoGalleryTwo>
+	  <PhotoGalleryOneZip>NotYetSetNodeValue</PhotoGalleryOneZip>
+	  <PhotoGalleryTwoZip>NotYetSetNodeValue</PhotoGalleryTwoZip>
+	  <ContactPerson>NotYetSetNodeValue</ContactPerson>
+	  <ContactEmail>NotYetSetNodeValue</ContactEmail>
+	  <ContactTelephone>NotYetSetNodeValue</ContactTelephone>
+	  <ContactStreet>NotYetSetNodeValue</ContactStreet>
+	  <ContactPostCode>NotYetSetNodeValue</ContactPostCode>
+	  <ContactCity>NotYetSetNodeValue</ContactCity>
+	  <LoginPassword>NotYetSetNodeValue</LoginPassword>
+      <Musicians>
+        <Musician>
+          <Name>Musiker Name</Name>
+          <Instrument>NotYetSetNodeValue</Instrument>
+          <Text>NotYetSetNodeValue</Text>
+          <BirthYear>NotYetSetNodeValue</BirthYear>
+		  <Gender>male</Gender>
+		</Musician>
+      </Musicians>
+    </Concert>
+    <!--  Konzert 12 End -->
+  <!--  </Concerts>  -->
+</Saison> 
