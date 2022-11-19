@@ -227,6 +227,7 @@
     </Compile>
     <Compile Include="NewsStrings.cs" />
     <Compile Include="OpenSaveDialog.cs" />
+    <Compile Include="PassWord.cs" />
     <Compile Include="PhotoDeveloper.cs" />
     <Compile Include="PhotoDeveloperForm.cs">
       <SubType>Form</SubType>
@@ -529,34 +530,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ftp\Ftp\Ftp.csproj">
-      <Project>{fb55f4a3-2a79-4130-bbde-71091cb7a7c8}</Project>
-      <Name>Ftp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JazzApp\JazzApp\JazzApp.csproj">
-      <Project>{10685ca3-0580-4bfe-85e8-133b59857898}</Project>
-      <Name>JazzApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JazzFtp\JazzFtp\JazzFtp.csproj">
-      <Project>{a7b3d312-be5b-4ff2-98fe-5ca0071c20cb}</Project>
-      <Name>JazzFtp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JazzLoginLogout\JazzLoginLogout\JazzLoginLogout.csproj">
-      <Project>{e49676c1-f331-4039-a76a-050b00bc786f}</Project>
-      <Name>JazzLoginLogout</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JazzVersion\JazzVersion\JazzVersion.csproj">
-      <Project>{d3d423fa-05f0-48a3-9fc8-cc6bab0dba22}</Project>
-      <Name>JazzVersion</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="IconEdit.png" />
     <None Include="IconPhotoPlus.png" />
     <None Include="IconDownload.png" />
     <None Include="IconBlack.png" />
     <Content Include="JazzIcon.ico" />
     <None Include="Resources\IconPhotoPlus.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinFtp\Ftp\Ftp.csproj">
+      <Project>{fb55f4a3-2a79-4130-bbde-71091cb7a7c8}</Project>
+      <Name>Ftp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinJazzApp\JazzApp\JazzApp.csproj">
+      <Project>{10685ca3-0580-4bfe-85e8-133b59857898}</Project>
+      <Name>JazzApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinJazzFtp\JazzFtp\JazzFtp.csproj">
+      <Project>{a7b3d312-be5b-4ff2-98fe-5ca0071c20cb}</Project>
+      <Name>JazzFtp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinLoginLogout\JazzLoginLogout\JazzLoginLogout.csproj">
+      <Project>{e49676c1-f331-4039-a76a-050b00bc786f}</Project>
+      <Name>JazzLoginLogout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinVersion\JazzVersion\JazzVersion.csproj">
+      <Project>{d3d423fa-05f0-48a3-9fc8-cc6bab0dba22}</Project>
+      <Name>JazzVersion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

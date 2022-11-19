@@ -41,7 +41,7 @@ namespace JazzAppAdmin
         { get { return m_exe_directory; } }
 
         /// <summary>Password for www directories</summary>
-        static private string m_ftp_www_password = PassWord.Server;;
+        static private string m_ftp_www_password = PassWord.Server;
 
         /// <summary>Get password for www directories</summary>
         static public string FtpWwwPassword
