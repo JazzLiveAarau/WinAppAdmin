@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A367CA4-50D3-4C15-8AEA-81B6BC486F57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JazzAppAdmin</RootNamespace>
+    <AssemblyName>JazzAppAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>JazzIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.cs" />
+    <Compile Include="AboutUsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUsForm.Designer.cs">
+      <DependentUpon>AboutUsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUtils.cs" />
+    <Compile Include="Backup.cs" />
+    <Compile Include="Concert.cs" />
+    <Compile Include="ConcertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConcertForm.Designer.cs">
+      <DependentUpon>ConcertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConcertPremises.cs" />
+    <Compile Include="ConcertPremisesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConcertPremisesForm.Designer.cs">
+      <DependentUpon>ConcertPremisesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocAdmin.cs" />
+    <Compile Include="DocAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocAdminForm.Designer.cs">
+      <DependentUpon>DocAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocAdminString.cs" />
+    <Compile Include="DocAdminUtil.cs" />
+    <Compile Include="DocDirNames.cs" />
+    <Compile Include="DocDirNamesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocDirNamesForm.Designer.cs">
+      <DependentUpon>DocDirNamesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocDocPdfImgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocDocPdfImgForm.Designer.cs">
+      <DependentUpon>DocDocPdfImgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocExeDocument.cs" />
+    <Compile Include="DocHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocHelpForm.Designer.cs">
+      <DependentUpon>DocHelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocHtmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocHtmForm.Designer.cs">
+      <DependentUpon>DocHtmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocOriginPdf.cs" />
+    <Compile Include="DocOriginPdfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocOriginPdfForm.Designer.cs">
+      <DependentUpon>DocOriginPdfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocProgram.cs" />
+    <Compile Include="DocProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocProgramForm.Designer.cs">
+      <DependentUpon>DocProgramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocXlsPdfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocXlsPdfForm.Designer.cs">
+      <DependentUpon>DocXlsPdfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownLoad.cs" />
+    <Compile Include="EditCapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCapForm.Designer.cs">
+      <DependentUpon>EditCapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileUtil.cs" />
+    <Compile Include="Flyer.cs" />
+    <Compile Include="FlyerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlyerForm.Designer.cs">
+      <DependentUpon>FlyerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFiles.cs" />
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmFiles.cs" />
+    <Compile Include="HtmKeywords.cs" />
+    <Compile Include="HtmVorlagen.cs" />
+    <Compile Include="Index.cs" />
+    <Compile Include="IndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndexForm.Designer.cs">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternetUtil.cs" />
+    <Compile Include="Intranet.cs" />
+    <Compile Include="JazzAppAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JazzAppAdminForm.Designer.cs">
+      <DependentUpon>JazzAppAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JazzAppAdminSettings.cs" />
+    <Compile Include="JazzDocAll.cs" />
+    <Compile Include="JazzHelp.cs" />
+    <Compile Include="JazzHtml.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="MemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberForm.Designer.cs">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musician.cs" />
+    <Compile Include="MusicianContact.cs" />
+    <Compile Include="MusicianContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusicianContactForm.Designer.cs">
+      <DependentUpon>MusicianContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MusicianForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusicianForm.Designer.cs">
+      <DependentUpon>MusicianForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MusicianInfo.cs" />
+    <Compile Include="MusicianInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusicianInfoForm.Designer.cs">
+      <DependentUpon>MusicianInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MusicianTitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusicianTitleForm.Designer.cs">
+      <DependentUpon>MusicianTitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs" />
+    <Compile Include="NewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewsForm.Designer.cs">
+      <DependentUpon>NewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsStrings.cs" />
+    <Compile Include="OpenSaveDialog.cs" />
+    <Compile Include="PhotoDeveloper.cs" />
+    <Compile Include="PhotoDeveloperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoDeveloperForm.Designer.cs">
+      <DependentUpon>PhotoDeveloperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit.cs" />
+    <Compile Include="PhotoGalleryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoGalleryForm.Designer.cs">
+      <DependentUpon>PhotoGalleryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoMain.cs" />
+    <Compile Include="PhotoMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoMainForm.Designer.cs">
+      <DependentUpon>PhotoMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoPictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoPictureForm.Designer.cs">
+      <DependentUpon>PhotoPictureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoSlideShow.cs" />
+    <Compile Include="PhotoStrings.cs" />
+    <Compile Include="PhotoUpload.cs" />
+    <Compile Include="PhotoZipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoZipForm.Designer.cs">
+      <DependentUpon>PhotoZipForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Premises.cs" />
+    <Compile Include="PremisesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PremisesForm.Designer.cs">
+      <DependentUpon>PremisesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publish.cs" />
+    <Compile Include="PublishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishForm.Designer.cs">
+      <DependentUpon>PublishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QrCodeUtils.cs" />
+    <Compile Include="ReqImgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReqImgForm.Designer.cs">
+      <DependentUpon>ReqImgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReqLinksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReqLinksForm.Designer.cs">
+      <DependentUpon>ReqLinksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReqPdfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReqPdfForm.Designer.cs">
+      <DependentUpon>ReqPdfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request.cs" />
+    <Compile Include="RequestBand.cs" />
+    <Compile Include="RequestBandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestBandForm.Designer.cs">
+      <DependentUpon>RequestBandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestDateForm.Designer.cs">
+      <DependentUpon>RequestDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestDeveloper.cs" />
+    <Compile Include="RequestDeveloperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestDeveloperForm.Designer.cs">
+      <DependentUpon>RequestDeveloperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestForm.Designer.cs">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestStrings.cs" />
+    <Compile Include="RequestXml.cs" />
+    <Compile Include="RequestXmlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestXmlForm.Designer.cs">
+      <DependentUpon>RequestXmlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs" />
+    <Compile Include="SearchCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCheckForm.Designer.cs">
+      <DependentUpon>SearchCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeasonDocInterface.cs" />
+    <Compile Include="SeasonProgramTxt.cs" />
+    <Compile Include="SeasonUtil.cs" />
+    <Compile Include="SelectSeasonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectSeasonForm.Designer.cs">
+      <DependentUpon>SelectSeasonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundSample.cs" />
+    <Compile Include="SoundSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundSampleForm.Designer.cs">
+      <DependentUpon>SoundSampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeUtil.cs" />
+    <Compile Include="UpLoad.cs" />
+    <Compile Include="Website.cs" />
+    <Compile Include="WebsiteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebsiteForm.Designer.cs">
+      <DependentUpon>WebsiteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlEditDeveloper.cs" />
+    <Compile Include="XmlEditDeveloperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XmlEditDeveloperForm.Designer.cs">
+      <DependentUpon>XmlEditDeveloperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlEditStrings.cs" />
+    <Compile Include="XmlToHtml.cs" />
+    <EmbeddedResource Include="AboutUsForm.resx">
+      <DependentUpon>AboutUsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConcertForm.resx">
+      <DependentUpon>ConcertForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConcertPremisesForm.resx">
+      <DependentUpon>ConcertPremisesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocAdminForm.resx">
+      <DependentUpon>DocAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocDirNamesForm.resx">
+      <DependentUpon>DocDirNamesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocDocPdfImgForm.resx">
+      <DependentUpon>DocDocPdfImgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocHelpForm.resx">
+      <DependentUpon>DocHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocHtmForm.resx">
+      <DependentUpon>DocHtmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocOriginPdfForm.resx">
+      <DependentUpon>DocOriginPdfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocProgramForm.resx">
+      <DependentUpon>DocProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocXlsPdfForm.resx">
+      <DependentUpon>DocXlsPdfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCapForm.resx">
+      <DependentUpon>EditCapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlyerForm.resx">
+      <DependentUpon>FlyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndexForm.resx">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JazzAppAdminForm.resx">
+      <DependentUpon>JazzAppAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberForm.resx">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusicianContactForm.resx">
+      <DependentUpon>MusicianContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusicianForm.resx">
+      <DependentUpon>MusicianForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusicianInfoForm.resx">
+      <DependentUpon>MusicianInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusicianTitleForm.resx">
+      <DependentUpon>MusicianTitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewsForm.resx">
+      <DependentUpon>NewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoDeveloperForm.resx">
+      <DependentUpon>PhotoDeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoGalleryForm.resx">
+      <DependentUpon>PhotoGalleryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoMainForm.resx">
+      <DependentUpon>PhotoMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoPictureForm.resx">
+      <DependentUpon>PhotoPictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoZipForm.resx">
+      <DependentUpon>PhotoZipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PremisesForm.resx">
+      <DependentUpon>PremisesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PublishForm.resx">
+      <DependentUpon>PublishForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReqImgForm.resx">
+      <DependentUpon>ReqImgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReqLinksForm.resx">
+      <DependentUpon>ReqLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReqPdfForm.resx">
+      <DependentUpon>ReqPdfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestBandForm.resx">
+      <DependentUpon>RequestBandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestDateForm.resx">
+      <DependentUpon>RequestDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestDeveloperForm.resx">
+      <DependentUpon>RequestDeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestForm.resx">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestXmlForm.resx">
+      <DependentUpon>RequestXmlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCheckForm.resx">
+      <DependentUpon>SearchCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSeasonForm.resx">
+      <DependentUpon>SelectSeasonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundSampleForm.resx">
+      <DependentUpon>SoundSampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebsiteForm.resx">
+      <DependentUpon>WebsiteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XmlEditDeveloperForm.resx">
+      <DependentUpon>XmlEditDeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ftp\Ftp\Ftp.csproj">
+      <Project>{fb55f4a3-2a79-4130-bbde-71091cb7a7c8}</Project>
+      <Name>Ftp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JazzApp\JazzApp\JazzApp.csproj">
+      <Project>{10685ca3-0580-4bfe-85e8-133b59857898}</Project>
+      <Name>JazzApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JazzFtp\JazzFtp\JazzFtp.csproj">
+      <Project>{a7b3d312-be5b-4ff2-98fe-5ca0071c20cb}</Project>
+      <Name>JazzFtp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JazzLoginLogout\JazzLoginLogout\JazzLoginLogout.csproj">
+      <Project>{e49676c1-f331-4039-a76a-050b00bc786f}</Project>
+      <Name>JazzLoginLogout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JazzVersion\JazzVersion\JazzVersion.csproj">
+      <Project>{d3d423fa-05f0-48a3-9fc8-cc6bab0dba22}</Project>
+      <Name>JazzVersion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IconEdit.png" />
+    <None Include="IconPhotoPlus.png" />
+    <None Include="IconDownload.png" />
+    <None Include="IconBlack.png" />
+    <Content Include="JazzIcon.ico" />
+    <None Include="Resources\IconPhotoPlus.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

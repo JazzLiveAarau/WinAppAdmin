@@ -1,0 +1,260 @@
+File: JazzAppAdminTodo.txt
+
+Not used code
+
+        /// <summary>Get files that shall be uploaded </summary>
+        public string[] GetFilesForUpload(out string o_error)
+        {
+            o_error = "";
+            string[] ret_file_names = null;
+
+            ArrayList array_list_extensions = new ArrayList();
+            array_list_extensions.Add("xml");
+            array_list_extensions.Add("xsd");
+            string[] list_extensions = (string[])array_list_extensions.ToArray(typeof(string));
+         
+            string xml_replace_dir = FileUtil.SubDirectory(JazzAppAdminSettings.Default.XmlReplaceDir, Main.m_exe_directory) + @"\";
+
+            if (!FileUtil.GetFilesDirectory(list_extensions, xml_replace_dir, out ret_file_names))
+            {
+                o_error = "UpLoad.GetFilesForUpload failed. Programming error";
+                return ret_file_names;
+            }
+
+            return ret_file_names;
+        } // GetFilesForUpload
+
+
+
+
+        /// <summary>Replacing or adding XML and XSD files on the server
+        /// <para>1. Get files for upload</para>
+        /// <para>2. Check if the upload file is OK with schema XSD file and ...</para>
+        /// <para>3. Create a backup file on the Backups directory if the file already exists</para>
+        /// <para>4. Upload the file to the server and also the backup file if existing</para>
+        /// </summary>
+        /// <param name="o_error">Error description</param>
+        /// <returns>true if function succeeded</returns>
+        static public bool ExecuteReplaceAddXmlFiles(out string[] o_replaced_files, out string o_error)
+        {
+            o_error = "";
+            o_replaced_files = null;
+
+            string[] upload_files = null;
+            bool[] replace_flags = null;
+            if (!GetFilesForUploadToServer(out upload_files, out replace_flags, out o_error))
+            {
+                return false;
+            }
+
+            if (null == upload_files && null == replace_flags)
+            {
+                o_replaced_files = new string[1];
+                o_replaced_files[0] = JazzAppAdminSettings.Default.MsgXmlNoFilesReplacedOrAdded;
+                return true; // No files to upload
+            }
+            else if (null != upload_files && null == replace_flags)
+            {
+                return false;
+            }
+            else if (null == upload_files && null != replace_flags)
+            {
+                return false;
+            }
+            if (upload_files.Length != replace_flags.Length)
+            {
+                return false;
+            }
+
+            if (!BackupAllXmlAndXsdFiles(out o_error))
+            {
+                o_error = "Backup.ExecuteReplaceAddXmlFiles BackupAllXmlAndXsdFiles failed " + o_error;
+                return false;
+            }
+
+
+            UpLoad htpp_upload = new UpLoad();
+
+            bool to_www = false;
+
+            string server_xml_directory = @"www\" + JazzAppAdminSettings.Default.XmlExistingDir + @"\";
+            string server_xml_backup_directory = server_xml_directory + JazzAppAdminSettings.Default.XmlBackupsDir + @"\";
+
+            /*QQQQ
+            string backup_local_file_name_time = _GetBackupXmlLocalFileName("backup.txt");
+            string server_backupdirectory = Path.GetFileNameWithoutExtension(backup_local_file_name_time);
+            string server_xml_backup_directory_time_machine = server_xml_directory + JazzAppAdminSettings.Default.XmlBackupsDir + @"\" + server_backupdirectory;
+
+            string error_message = "";
+            if (!htpp_upload.CreateServerDirectory(server_xml_backup_directory_time_machine, out error_message))
+            {
+                error_message = "JazzAppAdminMain.ExecuteReplaceAddXmlFiles CreateServerDirectory failed " + error_message;
+            }
+            QQQ*/
+
+
+            ArrayList array_replaced_files = new ArrayList();
+
+            for (int i_upload_file = 0; i_upload_file < upload_files.Length; i_upload_file++)
+            {
+                string local_file_name = upload_files[i_upload_file];
+                bool replace_file = replace_flags[i_upload_file];
+
+                string local_file_name_without_dir = Path.GetFileName(local_file_name);
+                string server_file_url = server_xml_directory + local_file_name_without_dir;
+
+                /*QQQQ
+                string backup_local_file_name = _GetBackupXmlLocalFileName(local_file_name_without_dir);
+                string backup_local_file_name_without_dir = Path.GetFileName(backup_local_file_name);
+                string server_backup_file_url = server_xml_backup_directory + backup_local_file_name_without_dir;
+                QQQ*/
+
+                if (replace_file)
+                {
+                    //QQQ File.Copy(local_file_name, backup_local_file_name);
+
+                    if (!htpp_upload.OneFile(to_www, server_file_url, local_file_name, out o_error))
+                    {
+                        o_error = "Backup.ExecuteReplaceAddXmlFiles Replace XML or XSD file error: " + o_error;
+                        return false;
+                    }
+
+                    /*QQQQ
+                    if (!htpp_upload.OneFile(server_backup_file_url, backup_local_file_name, out o_error))
+                    {
+                        o_error = "JazzAppAdminMain.ExecuteReplaceAddXmlFiles Add XML or XSD backup file error: " + o_error;
+                        return false;
+                    }
+                    QQQ*/
+
+                    array_replaced_files.Add(local_file_name_without_dir + JazzAppAdminSettings.Default.MsgXmlFileIsReplaced);
+                }
+                else
+                {
+                    if (!htpp_upload.OneFile(to_www, server_file_url, local_file_name, out o_error))
+                    {
+                        o_error = "Backup.ExecuteReplaceAddXmlFiles New file error: " + o_error;
+                        return false;
+                    }
+
+                    array_replaced_files.Add(local_file_name_without_dir + JazzAppAdminSettings.Default.MsgXmlFileIsAdded);
+                }
+
+
+            } //  i_upload_file
+
+            o_replaced_files = (string[])array_replaced_files.ToArray(typeof(string));
+
+            return true;
+        }
+
+
+        /// <summary>Get all files that shall be uploaded and determine if the files already exist 
+        /// <para>1. Get all files in ReplaceXml directory.</para>
+        /// <para>2. Get all XMLand XSD files that were downloaded to the XML directory.</para>
+        /// <para>3. For each upload file determine if it is a new file or not.</para>
+        /// </summary>
+        /// <param name="o_upload_files">Array of files that shall be uploaded</param>
+        /// <param name="o_replace_flags">Array of replace/new flags</param>
+        /// <param name="o_error">Error description</param>
+        /// <returns>o_upload_files=null and empty o_error if there are no files to be uploaded</returns>
+        static private bool GetFilesForUploadToServer(out string[] o_upload_files, out bool[] o_replace_flags, out string o_error)
+        {
+            o_upload_files = null;
+            o_replace_flags = null;
+            o_error = "";
+
+            bool b_get_upload_files = true;
+
+            UpLoad htpp_upload = new UpLoad();
+
+            o_upload_files = htpp_upload.GetFilesForUpload(out o_error);
+            if (null == o_upload_files)
+            {
+                if (o_error.Length == 0)
+                {
+                    return b_get_upload_files; // There are no files to be uploaded
+                }
+                else
+                {
+                    b_get_upload_files = false;
+                    return b_get_upload_files;
+                }
+            }
+
+            DownLoad http_download = new DownLoad();
+
+            string[] down_loaded_files = http_download.GetDownLoadedFiles(out o_error);
+            if (null == down_loaded_files)
+            {
+                o_error = "Backup.GetFilesForUploadToServer Programming error: " + o_error;
+                b_get_upload_files = false;
+                return b_get_upload_files;
+            }
+
+            ArrayList array_replace_flags = new ArrayList();
+
+            string[] download_files_without_dir = new string[down_loaded_files.Length];
+            for (int i_download = 0; i_download < down_loaded_files.Length; i_download++)
+            {
+                string file_with_dir = down_loaded_files[i_download];
+                string file_without_dir = Path.GetFileName(file_with_dir);
+                download_files_without_dir[i_download] = file_without_dir;
+            }
+
+
+            for (int i_upload = 0; i_upload < o_upload_files.Length; i_upload++)
+            {
+                string upload_file_name_with_dir = o_upload_files[i_upload];
+
+                string upload_file_name = Path.GetFileName(upload_file_name_with_dir);
+
+                bool file_exists = FileUtil.FileIsInArray(upload_file_name, download_files_without_dir);
+
+                array_replace_flags.Add(file_exists);
+
+            }
+
+            o_replace_flags = (bool[])array_replace_flags.ToArray(typeof(bool));
+
+            return b_get_upload_files;
+
+        } // GetFilesForUploadToServer
+
+
+		        /// <summary>Modify string that shall be written to an XML (XDocument) object</summary>
+        public static string ModifyWriteXml(string i_string)
+        {
+            if (i_string.Trim().Length == 0)
+                return JazzXml.GetUndefinedNodeValue();
+
+            // https://www.roelvanlisdonk.nl/2009/09/23/you-should-use-system-security-securityelement-escape-in-c-to-escape-special-characters-in-xml-and-not-system-web-httputility-htmlencode/
+
+            string ret_string = System.Security.SecurityElement.Escape(i_string);
+
+            /*
+            string ret_string = @"";
+            for (int index_char=0; index_char< i_string.Length; index_char++)
+            {
+                string add_string = i_string.Substring(index_char, 1);
+
+                char current_char = (char)i_string[index_char];
+                
+                for (int index_escape=0; index_escape< m_xml_escape_chars.Length;index_escape++)
+                {
+                    char current_escape = m_xml_escape_chars[index_escape];
+                    if (current_char == current_escape)
+                    {
+                        add_string = m_xml_escape_replace[index_escape];
+                        break;
+                    } // current_char == current_escape
+                } // Loop index_escape
+
+                ret_string = ret_string + add_string;
+
+            } // Loop index_char
+            */
+
+            return ret_string;
+
+        } // ModifyWriteXml
