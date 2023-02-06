@@ -1390,8 +1390,8 @@ namespace JazzAppAdmin
         /// <summary>Returns year concert numbers for the JazzPhoto objects with uploaded galleries
         /// <para>Please note that it is not the season concert numbers that are returned.</para>
         /// <para>Start year for galleries based on JavaScripts is 2018, i.e. start season for concert years is 2017-2018</para>
-        /// <para></para>
-        /// <para></para>
+        /// <para>All XML files are no longer loaded. Start season is 2019-2020.</para>
+        /// <para>Bug fix 2023-02-06: Loop start changed to 2022 from 2017</para>
         /// </summary>
         /// <param name="i_jazz_photos_with_galleries">JazzPhoto objects with uploaded galleries. All for the same year. This array may have the length=0</param>
         /// <param name="o_error">Error description</param>
@@ -1512,8 +1512,8 @@ namespace JazzAppAdmin
         /// <summary>Returns year concert numbers
         /// <para>Please note that it is not the season concert numbers that are returned.</para>
         /// <para>Start year for galleries based on JavaScripts is 2018, i.e. start season for concert years is 2017-2018</para>
-        /// <para></para>
-        /// <para></para>
+        /// <para>All XML files are no longer loaded. Start season is 2019-2020.</para>
+        /// <para>Bug fix 2023-02-06: Loop start 2022</para>
         /// </summary>
         /// <param name="i_jazz_photos_with_galleries">JazzPhoto objects with uploaded galleries. All for the same year. This array may have the length=0</param>
         /// <param name="o_error">Error description</param>
@@ -1534,7 +1534,7 @@ namespace JazzAppAdmin
 
             XDocument input_active_season_object = JazzXml.GetDocumentCurrent();
 
-            for (int season_start_year = 2017; season_start_year <= i_concert_year; season_start_year++)
+            for (int season_start_year = 2022; season_start_year <= i_concert_year; season_start_year++)
             {
                 if (!JazzXml.SetXmlDocument(season_start_year))
                 {

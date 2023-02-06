@@ -1778,9 +1778,9 @@ namespace JazzAppAdmin
             PhotoUpload photo_upload = new PhotoUpload(b_debug);
 
             bool only_year = false;
-            int year_int = 2020;
-            int month_int = 10;
-            int day_int = 3;
+            int year_int = 2023;
+            int month_int = 1;
+            int day_int = 21;
 
             JazzPhoto[] jazz_photos = PhotoMain.GetJazzPhotoObjectsYearOrDate(only_year, year_int, month_int, day_int, out o_error);
            if (null == jazz_photos || jazz_photos.Length != 1)
