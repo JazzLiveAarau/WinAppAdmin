@@ -5,7 +5,7 @@ AppPublisher=JAZZ live AARAU
 AppPublisherURL=https://jazzliveaarau.ch/
 VersionInfoCompany=JAZZ live AARAU
 AppName=JAZZ live AARAU Admin
-AppVerName=JAZZ live AARAU Admin version 1.95
+AppVerName=JAZZ live AARAU Admin version 1.96
 DefaultDirName={sd}\Apps\JazzLiveAarau\Admin
 DefaultGroupName=JAZZ live AARAU Admin
 UninstallDisplayIcon={app}\JazzAppAdmin.exe
@@ -13,7 +13,7 @@ Uninstallable=yes
 Compression=lzma
 SolidCompression=yes
 OutputDir= NeueVersion
-OutputBaseFilename= SetupJazzLiveAarauAdmin-version-1-95
+OutputBaseFilename= SetupJazzLiveAarauAdmin-version-1-96
 
 [Dirs]
 Name: "{app}\appdata"; Permissions: users-modify

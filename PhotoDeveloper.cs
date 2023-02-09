@@ -1779,8 +1779,8 @@ namespace JazzAppAdmin
 
             bool only_year = false;
             int year_int = 2023;
-            int month_int = 1;
-            int day_int = 21;
+            int month_int = 2;
+            int day_int = 4;
 
             JazzPhoto[] jazz_photos = PhotoMain.GetJazzPhotoObjectsYearOrDate(only_year, year_int, month_int, day_int, out o_error);
            if (null == jazz_photos || jazz_photos.Length != 1)
