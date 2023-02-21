@@ -229,6 +229,10 @@ namespace JazzAppAdmin
                 {
                     mod_str_2 = mod_str_2 + @"A";
                 }
+                else if (current_char.Equals("."))
+                {
+                    mod_str_2 = mod_str_2 + @"";
+                }
                 else
                 {
                     mod_str_2 = mod_str_2 + current_char;
