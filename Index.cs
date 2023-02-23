@@ -283,12 +283,12 @@ namespace JazzAppAdmin
 
                     return false;
                 }
+                 
+                jazz_concert.ConcertPlace = JazzXml.GetPremises();
 
-                jazz_concert.ConcertPlace = @"Spaghetti Factory Salmen";
+                jazz_concert.ConcertStreet = JazzXml.GetPremisesStreet();
 
-                jazz_concert.ConcertStreet = @"Metzgergasse 8";
-
-                jazz_concert.ConcertCity = @"Aarau";
+                jazz_concert.ConcertCity = JazzXml.GetPremisesCity();
 
                 jazz_concert.ConcertBandName = @"Band " + concert_number.ToString();
 
