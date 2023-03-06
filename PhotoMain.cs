@@ -2479,9 +2479,9 @@ namespace JazzAppAdmin
             AddUploadPhotoXmlFile(season_xml_file_name, season_xml_object);
 
             // Debug Start
-            XDocument[] upload_xdocs = GetUploadPhotoXmlXDocuments;
-            string[] upload_files = GetUploadPhotoXmlFileNames;
-            season_xml_object.Save(PhotoMaintenanceDir + @"\" + "Debug_PhotoMain_UpdateZipSeasonXmlFile.xml");
+            // XDocument[] upload_xdocs = GetUploadPhotoXmlXDocuments;
+            // string[] upload_files = GetUploadPhotoXmlFileNames;
+            // Crash if directory not is defined season_xml_object.Save(PhotoMaintenanceDir + @"\" + "Debug_PhotoMain_UpdateZipSeasonXmlFile.xml");
             // Debug End
 
             return true;
