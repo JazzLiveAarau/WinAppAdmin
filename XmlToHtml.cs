@@ -55,7 +55,7 @@ namespace JazzAppAdmin
         } // InitXmlToHtml
 
         #region Get the content of a web page HTM template file as a string
-
+        /*QQ20230930
         /// <summary>Get the file content as a string from the the web page template file
         /// <para></para>
         /// </summary>
@@ -89,11 +89,12 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFilesAsStringsForConcertWebPages
-
+        QQ20230930*/
         #endregion // Get the content of a web page HTM template file as a string
 
         #region Get the content of a web document HTM template file as a string
 
+        /*QQ 20230930 
         /// <summary>Get template file content as a string for data that shall be displayed in a DOC-PDF-IMG HTML table
         /// <para></para>
         /// </summary>
@@ -114,7 +115,9 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFileAsStringForDocPdfImg
+        QQ 20230930 */
 
+        /*QQ 20230930 
         /// <summary>Get template file content as a string for data that shall be displayed in a DOC-PDF HTML table
         /// <para></para>
         /// </summary>
@@ -135,7 +138,9 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFileAsStringForDocPdf
+        QQ 20230930 */
 
+        /*QQ 20230930 
         /// <summary>Get template file content as a string for data that shall be displayed in a XSL-PDF HTML table
         /// <para></para>
         /// </summary>
@@ -156,7 +161,9 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFileAsStringForXlsPdf
+        20230930  */
 
+        /*QQ 20230930 
         /// <summary>Get template file content from DokumentSaison.htm
         /// <para></para>
         /// </summary>
@@ -219,19 +226,671 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFileAsStringForDokumentSaisonRow
-
-
-
-        /*
-               static public string GetFilenameDokumentSaison() { return m_htm_template_file_names[6]; }
-                /// <summary>Returns the filename for the DokumentSaisonHeader template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-                static public string GetFilenameDokumentSaisonHeader() { return m_htm_template_file_names[7]; }
-                /// <summary>Returns the filename for the DokumentSaisonRow template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-                static public string GetFilenameDokumentSaisonRow() { return m_htm_template_file_names[8]; }
-
-        */
+        QQ 20230930 */
 
         #endregion // Get the content of a document HTM template file as a string
+
+        #region Generate the content of a web document HTM template file as a string
+
+        /// <summary>Generate template file content for DokumentSaison.htm
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForDokumentSaison(out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            o_template_file_string += "<!DOCTYPE html>" + NewLine();
+
+            o_template_file_string += "<html>" + NewLine();
+
+            o_template_file_string += ConcertTemplateFileDescription();
+
+            o_template_file_string += TabTwo() + "<head>" + NewLine();
+
+            o_template_file_string += TabFour() + "<title>Saisondokument</title>" + NewLine();
+
+            o_template_file_string += TdCssString();
+
+            o_template_file_string += ParagraphCssString();
+
+            o_template_file_string += TabTwo() + "</head>" + NewLine();
+
+            o_template_file_string += TabTwo() + "<body>" + NewLine();
+
+            o_template_file_string += TabFour() + "<p><b><br>" + NewLine();
+
+            o_template_file_string += TabFour() + "&nbsp;Saisondokumente  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saison JazzDokumenteSaison.SeasonYears" + NewLine();
+
+            o_template_file_string += TabFour() + "</p>" + NewLine();
+
+            o_template_file_string += TabThree() + "<table align='left' cellSpacing='0 cellPadding='0'  border='0'>" + NewLine();
+
+            o_template_file_string += TabThree() + "JazzDokumenteSaison.InsertHeader" + NewLine();
+
+            o_template_file_string += TabThree() + "JazzDokumenteSaison.InsertRow" + NewLine();
+
+            o_template_file_string += ConcertTemplateFileEnd();
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForDokumentSaison
+
+        /// <summary>Generate template file content for DokumentSaisonHeader.htm
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForDokumentSaisonHeader(out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            o_template_file_string += TabFour() + "<!-- Header Start  -->" + NewLine();
+
+            int colspan = 7;
+
+            o_template_file_string += ConcertTemplateLine(colspan);
+
+            o_template_file_string += TabSix() + "<tr>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='128'>";
+
+            o_template_file_string += "Dokument";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "DOC";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "XLS";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "PDF";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "TXT";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "IMG";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "Publizieren";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabSix() + "</tr>" + NewLine();
+
+            o_template_file_string += ConcertTemplateLine(colspan);
+
+            o_template_file_string += TabFour() + "<!-- Header End  -->" + NewLine();
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForDokumentSaisonHeader
+
+        /// <summary>Generate template file content for DokumentSaisonRow.htm
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForDokumentSaisonRow(out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            o_template_file_string += TabFour() + "<!-- Document Start  -->" + NewLine();
+
+            o_template_file_string += TabSix() + "<tr>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td style= 'color:#ff0028' width='58'>";
+
+            o_template_file_string += "JazzDokumente.DocumentDialogTitle";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.PathFileNameLinkDoc";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.PathFileNameLinkXls";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.PathFileNameLinkPdf";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.PathFileNameLinkTxt";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.PathFileNameLinkImg";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            o_template_file_string += TabEight() + "<td width='29'>";
+
+            o_template_file_string += "JazzDokumenteSaison.Publish";
+
+            o_template_file_string += "</td>" + NewLine();
+
+            int colspan = 7;
+
+            o_template_file_string += ConcertTemplateLine(colspan);
+
+            o_template_file_string += TabSix() + "</tr>" + NewLine();
+
+            o_template_file_string += TabFour() + "<!-- Document End  -->" + NewLine();
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForDokumentSaisonRow
+
+
+        /// <summary>Generate the template file content as a string for data that shall be displayed in a DOC-PDF-IMG HTML table
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForDocPdfImg(int i_n_concerts, out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            int colspan = 6;
+
+            bool b_image = true;
+
+            o_template_file_string += ConcertTemplateFileStart(colspan, b_image);
+
+            for (int concert_number=1; concert_number <= i_n_concerts; concert_number++)
+            {
+                o_template_file_string += TabFour() + "<!-- Konzert " + concert_number.ToString() + " Start -->"+ NewLine();
+
+                o_template_file_string += TabFour() + "<tr>" + NewLine();
+
+                string case_col = "date";
+
+                int width = 58;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "band";
+
+                width = 128;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "doc";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "pdf";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "img";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "publish";
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+
+                o_template_file_string += TabFour() + "</tr>" + NewLine();
+
+
+                o_template_file_string += ConcertTemplateLine(colspan);
+
+                o_template_file_string += TabFour() + "<!-- Konzert " + concert_number.ToString() + " End -->" + NewLine();
+
+            }
+
+            o_template_file_string += ConcertTemplateFileEnd();
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForDocPdfImg
+
+        /// <summary>Generate template file content as a string for data that shall be displayed in a DOC-PDF HTML table
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForDocPdf(int i_n_concerts, out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            int colspan = 5;
+
+            bool b_image = false;
+
+            o_template_file_string += ConcertTemplateFileStart(colspan, b_image);
+
+            for (int concert_number = 1; concert_number <= i_n_concerts; concert_number++)
+            {
+                o_template_file_string += TabFour() + TabFour() + "<!-- Konzert " + concert_number.ToString() + " Start -->" + NewLine();
+
+                o_template_file_string += TabFour() + TabFour() + "<TR>" + NewLine();
+
+                string case_col = "date";
+
+                int width = 58;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "band";
+
+                width = 128;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "doc";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "pdf";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "publish";
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+
+                o_template_file_string += TabFour() + TabFour() + "</TR>" + NewLine();
+
+
+                o_template_file_string += ConcertTemplateLine(colspan);
+
+                o_template_file_string += TabFour() + TabFour() + "<!-- Konzert " + concert_number.ToString() + " End -->" + NewLine();
+
+            }
+
+
+            o_template_file_string += ConcertTemplateFileEnd();
+
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForDocPdf
+
+        /// <summary>Generate template file content as a string for data that shall be displayed in a XSL-PDF HTML table
+        /// <para></para>
+        /// </summary>
+        /// <param name="o_template_file_string">Output string with the content of the template file</param>
+        /// <param name="o_error">Error description</param>
+        public static bool GenerateTemplateFileAsStringForXlsPdf(int i_n_concerts, out string o_template_file_string, out string o_error)
+        {
+            o_error = @"";
+            o_template_file_string = @"";
+
+            int colspan = 5;
+
+            bool b_image = false;
+
+            o_template_file_string += ConcertTemplateFileStart(colspan, b_image);
+
+            for (int concert_number = 1; concert_number <= i_n_concerts; concert_number++)
+            {
+                o_template_file_string += TabFour() + TabFour() + "<!-- Konzert " + concert_number.ToString() + " Start -->" + NewLine();
+
+                o_template_file_string += TabFour() + TabFour() + "<TR>" + NewLine();
+
+                string case_col = "date";
+
+                int width = 58;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "band";
+
+                width = 128;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "xls";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "pdf";
+
+                width = 29;
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+                case_col = "publish";
+
+                o_template_file_string += ConcertTemplateCol(case_col, concert_number, width);
+
+
+                o_template_file_string += TabFour() + TabFour() + "</TR>" + NewLine();
+
+
+                o_template_file_string += ConcertTemplateLine(colspan);
+
+                o_template_file_string += TabFour() + TabFour() + "<!-- Konzert " + concert_number.ToString() + " End -->" + NewLine();
+
+            }
+
+            o_template_file_string += ConcertTemplateFileEnd();
+
+            return true;
+
+        } // GenerateTemplateFileAsStringForXlsPdf
+
+
+        /// <summary>Returns the concert start file part</summary>
+        private static string ConcertTemplateFileStart(int i_colspan, bool i_b_image)
+        {
+            string o_start_str = "";
+
+            o_start_str += "<!DOCTYPE html>" + NewLine();
+
+            o_start_str += "<html>" + NewLine();
+
+            o_start_str += ConcertTemplateFileDescription();
+
+            o_start_str += TabTwo() + "<head>" + NewLine(); 
+            
+            o_start_str += TabFour() + "<title>JazzDokumente.TemplateDescription</title>" + NewLine();
+
+            o_start_str += TdCssString();
+
+            o_start_str += ParagraphCssString();
+
+            o_start_str += TabTwo() + "</head>" + NewLine();
+
+            o_start_str += TabTwo() + "<body>" + NewLine();
+
+            o_start_str += TabFour() + "<p><b><br>" + NewLine();
+
+            o_start_str += TabFour() + "&nbsp;JazzDokumente.TemplateDescription  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saison JazzDokumenteSaison.SeasonYears" + NewLine();
+
+            o_start_str += TabFour() + "</p>" + NewLine();
+
+            o_start_str += TabThree() + "<table align='left' cellSpacing='0 cellPadding='0'  border='0'>" + NewLine();
+      
+            o_start_str += ConcertTemplateLine(i_colspan);
+
+            o_start_str += TabFour() + "<!-- Header Start  -->" + NewLine();
+
+            o_start_str += TabSix() + "<tr>" + NewLine();
+
+            o_start_str += TabTen() + "<td width='58'>";
+
+            o_start_str += "&nbsp;Datum";
+
+            o_start_str += "</td>" + NewLine();
+
+            o_start_str += TabTen() + "<td width='128'>";
+
+            o_start_str += "Konzert";
+
+            o_start_str += "</td>" + NewLine();
+
+            o_start_str += TabTen() + "<td width='29'>";
+
+            o_start_str += "JazzDokumente.DocumentDialogTitle";
+
+            o_start_str += "</td>" + NewLine();
+
+            o_start_str += TabTen() + "<td width='29'>";
+
+            o_start_str += "&nbsp;";
+
+            o_start_str += "</td>" + NewLine();
+
+
+            if (i_b_image)
+            {
+                o_start_str += TabTen() + "<td width='29'>";
+
+                o_start_str += "Bild";
+
+                o_start_str += "</td>" + NewLine();
+            }
+
+            o_start_str += TabTen() + "<td width='29'>";
+
+            o_start_str += "Publizieren";
+
+            o_start_str += "</td>" + NewLine();
+
+
+            o_start_str += TabFour() + "</tr>" + NewLine();
+
+            o_start_str += ConcertTemplateLine(i_colspan);
+
+            o_start_str += TabFour() + "<!-- Header End  -->" + NewLine();
+
+            o_start_str += "" + NewLine();
+
+            return o_start_str;
+
+        } // ConcertTemplateFileStart
+
+        /// <summary>Returns the concert end file part</summary>
+        private static string ConcertTemplateFileEnd()
+        {
+            string o_end_str = "";
+
+            o_end_str += TabThree() + "</table>" + NewLine();
+
+            o_end_str += TabTwo() + "</body>" + NewLine();
+
+            o_end_str += "</html>" + NewLine();
+
+            return o_end_str;
+
+        }  // ConcertTemplateFileEnd
+
+        /// <summary>Returns comment describing the file </summary>
+        private static string ConcertTemplateFileDescription()
+        {
+            string o_comment_str = "";
+
+            o_comment_str += TabTwo() + "<!-- The Windows application Admin has created this file -->" + NewLine();
+
+            return o_comment_str;
+
+        }  // ConcertTemplateFileDescription
+
+
+        /// <summary>Returns the concert column </summary>
+        private static string ConcertTemplateCol(string i_case_col, int i_concert_number, int i_width)
+        {
+            string o_col_str = "";
+
+            if (i_case_col.Equals("date") || i_case_col.Equals("band"))
+            {
+                o_col_str += TabEight() + "<td style= 'color:#ff0028' width='" + i_width.ToString() + "'>";
+            }
+            else
+            {
+                o_col_str += TabEight() + "<td width='" + i_width.ToString() + "'>";
+            }
+
+            if (i_case_col.Equals("date"))
+            {
+                o_col_str += "&nbsp;JazzProgrammSaison.ConcertDate(" + i_concert_number.ToString() + ")";
+            }
+            else if (i_case_col.Equals("band"))
+            {
+                o_col_str += "JazzProgrammSaison.BandName(" + i_concert_number.ToString() + ")"; 
+            }
+            else if (i_case_col.Equals("doc"))
+            {
+                o_col_str += "<A href='JazzDokumenteSaison.PathFileNameDoc(" + i_concert_number.ToString() + ")'>DOC</A>"; 
+            }
+            else if (i_case_col.Equals("pdf"))
+            {
+                o_col_str += "<A href='JazzDokumenteSaison.PathFileNamePdf(" + i_concert_number.ToString() + ")'>PDF</A>"; 
+            }
+            else if (i_case_col.Equals("img"))
+            {
+                o_col_str += "<A href='JazzDokumenteSaison.PathFileNameImg(" + i_concert_number.ToString() + ")'>IMG</A>"; 
+            }
+            else if (i_case_col.Equals("xls"))
+            {
+                o_col_str += "<A href='JazzDokumenteSaison.PathFileNameXls(" + i_concert_number.ToString() + ")'>XLS</A>"; 
+            }
+            else if (i_case_col.Equals("publish"))
+            {
+                o_col_str += "JazzDokumenteSaison.Published(" + i_concert_number.ToString() + ")"; 
+            }
+            else
+            {
+                o_col_str += "ConcertTemplateCol: Undefined case= " + i_case_col; ;
+            }
+
+            o_col_str += "</td>" + NewLine();
+
+            return o_col_str;
+
+        }  // ConcertTemplateCol
+
+        /// <summary>Returns the concert template line</summary>
+        private static string ConcertTemplateLine(int i_colspan)
+        {
+            string o_line_str = "";
+
+            o_line_str += TabFour() + "<tr>" + NewLine();
+
+            o_line_str += TabSix() + "<td colspan='" + i_colspan.ToString() + "'>" + NewLine();
+
+            o_line_str += TabEight() + "__________________________________________________________________________________________________________" + NewLine();
+
+            o_line_str += TabSix() + "</td>" + NewLine();
+
+            o_line_str += TabFour() + "</tr>" + NewLine();
+
+            return o_line_str;
+
+
+        } // ConcertTemplateLine
+
+        /// <summary>Returns style for the TD element</summary>
+        static private string TdCssString()
+        {
+            string o_css_str = "";
+
+            o_css_str += TabFour() + "<style>" + NewLine();
+
+            o_css_str += TabSix() + "td" + NewLine();
+
+            o_css_str += TabSix() + "{" + NewLine();
+
+            o_css_str += TabEight() + "font-family: 'Arial Narrow';" + NewLine();
+
+            o_css_str += TabEight() + "font-size: 3;" + NewLine();
+
+            o_css_str += TabEight() + "font-weight: bold;" + NewLine();
+
+            o_css_str += TabEight() + "background-color: #FFFFFF;" + NewLine();
+
+            o_css_str += TabSix() + "}" + NewLine();
+
+            o_css_str += TabFour() + "</style>" + NewLine();
+
+            return o_css_str;
+
+        } // TdCssString
+
+        /// <summary>Returns style for the P element</summary>
+        static private string ParagraphCssString()
+        {
+            string o_css_p_str = "";
+
+            o_css_p_str += TabFour() + "<style>" + NewLine();
+
+            o_css_p_str += TabSix() + "p" + NewLine();
+
+            o_css_p_str += TabSix() + "{" + NewLine();
+
+            o_css_p_str += TabSix() + "font-family: 'Arial Narrow';" + NewLine();
+
+            o_css_p_str += TabEight() + "font-size: 14pt;" + NewLine();
+
+            o_css_p_str += TabEight() + "font-weight: bold;" + NewLine();
+
+            o_css_p_str += TabEight() + "background-color: #FFFFFF;" + NewLine();
+
+            o_css_p_str += TabSix() + "}" + NewLine();
+
+            o_css_p_str += TabFour() + "</style>" + NewLine();
+
+            return o_css_p_str;
+
+        } // ParagraphCssString
+
+        /// <summary>Returns two spaces</summary>
+        static private string TabTwo() { return "  "; }
+
+        /// <summary>Returns three spaces</summary>
+        static private string TabThree() { return "   "; }
+
+        /// <summary>Returns four spaces</summary>
+        static private string TabFour() { return "    "; }
+
+        /// <summary>Returns six spaces</summary>
+        static private string TabSix() { return "      "; }
+
+        /// <summary>Returns eight spaces</summary>
+        static private string TabEight() { return "        "; }
+
+        /// <summary>Returns ten spaces</summary>
+        static private string TabTen() { return "          "; }
+
+        /// <summary>Returns new line</summary>
+        static private string NewLine() { return "\r\n"; }
+
+        #endregion // Generate the content of a web document HTM template file as a string
+
 
         #region Functions for document and web page HTM template files
 

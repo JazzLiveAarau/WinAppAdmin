@@ -335,6 +335,7 @@ namespace JazzAppAdmin
 
         #region Create and upload concert web page html files
 
+        /* QQ20230930
         /// <summary>Main function for create and upload of concert web page html files
         /// <para>1. Get content of template files as strings. Call of GetTemplateFilesConcertWebPagesAsStrings.</para>
         /// <para>2.</para>
@@ -380,6 +381,7 @@ namespace JazzAppAdmin
             return true;
 
         } // HtmlConcertWebPagesCreateUpload  
+        QQ20230930 */
 
         #endregion // Create and upload concert web page html files
 
@@ -555,17 +557,32 @@ namespace JazzAppAdmin
             string season_header_start_template_file_string = @"";
             string season_row_start_template_file_string = @"";
 
-            if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaison(out season_start_template_file_string, out o_error))
+            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaison(out season_start_template_file_string, out o_error))
+            //QQ20230930 {
+            //QQ20230930 return false;
+            //QQ20230930 }
+
+            if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaison(out season_start_template_file_string, out o_error))
             {
                 return false;
             }
 
-            if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonHeader(out season_header_start_template_file_string, out o_error))
+            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonHeader(out season_header_start_template_file_string, out o_error))
+            //QQ20230930 {
+            //QQ20230930 return false;
+            //QQ20230930 }
+
+            if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaisonHeader(out season_header_start_template_file_string, out o_error))
             {
                 return false;
             }
 
-            if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonRow(out season_row_start_template_file_string, out o_error))
+            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonRow(out season_row_start_template_file_string, out o_error))
+            //QQ20230930 {
+            //QQ20230930 return false;
+            //QQ20230930 }
+
+            if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaisonRow(out season_row_start_template_file_string, out o_error))
             {
                 return false;
             }
@@ -663,7 +680,7 @@ namespace JazzAppAdmin
 
         /// <summary>Main function for create and upload of concert document html files
         /// <para>1. Get number of concert document objects. Call of NumberOfConcertDocs.</para>
-        /// <para>2. Loop for 12 concerts</para>
+        /// <para>2. Loop for all concerts</para>
         /// <para>2.1 Get current JazzDoc object. Call of DocAdmin.GetConcertDocOfActiveXmlObject.</para>
         /// <para>2.2 Loop for all JazzDoc objects.</para>
         /// <para>2.2.1 Get template surface content as a string. Call of GetTemplateFileAsString for the first concert</para>
@@ -693,9 +710,13 @@ namespace JazzAppAdmin
 
                 JazzDocTemplate template_doc = null;
 
+                string[] band_names = DocAllIntranet.BandNames;
+
+                int n_concerts = band_names.Length;
+
                 // There are 12 bands/concerts (should not be hardcoded). For each band/concert there is (must be) a concert/band object
                 // The inner loop is over the bands/concerts and the band/concert object for the current band/concert is retrieved with GetConcertDocOfActiveXmlObject
-                for (int concert_number = 1; concert_number <= 12; concert_number++)
+                for (int concert_number = 1; concert_number <= n_concerts; concert_number++)
                 {
                     // If the outer loop value is Poster then the current_concert_doc should be Concert/Band 1 Poster, Concert/Band 2 Poster, ....
                     JazzDoc current_concert_doc = GetConcertDocOfActiveXmlObject(index_concert_doc, concert_number, out error_message);
@@ -707,7 +728,7 @@ namespace JazzAppAdmin
 
                     if (1 == concert_number)
                     {
-                        if (!GetTemplateFileAsString(out template_file_string, out template_doc, current_concert_doc, out error_message))
+                        if (!GetTemplateFileAsString(n_concerts, out template_file_string, out template_doc, current_concert_doc, out error_message))
                         {
                             o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
                             return false;
@@ -913,7 +934,7 @@ namespace JazzAppAdmin
         /// <param name="o_template_doc">Output template object corresponding to i_doc</param>
         /// <param name="i_doc">Input concert object</param>
         /// <param name="o_error">Error description</param>
-        private static bool GetTemplateFileAsString(out string o_template_file_string, out JazzDocTemplate o_template_doc, JazzDoc i_doc, out string o_error)
+        private static bool GetTemplateFileAsString(int i_n_concerts, out string o_template_file_string, out JazzDocTemplate o_template_doc, JazzDoc i_doc, out string o_error)
         {
             o_error = @"";
             o_template_file_string = @"";
@@ -940,7 +961,13 @@ namespace JazzAppAdmin
 
             if (doc_document_dialog.Equals("DocPdfImg"))
             {
-                if (!XmlToHtml.GetTemplateFileAsStringForDocPdfImg(out o_template_file_string, out error_message))
+                //QQ 20230930 if (!XmlToHtml.GetTemplateFileAsStringForDocPdfImg(out o_template_file_string, out error_message))
+                //QQ 20230930 {
+                //QQ 20230930 o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
+                //QQ 20230930 return false;
+                //QQ 20230930 }
+
+                if (!XmlToHtml.GenerateTemplateFileAsStringForDocPdfImg(i_n_concerts, out o_template_file_string, out error_message))
                 {
                     o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
                     return false;
@@ -948,7 +975,13 @@ namespace JazzAppAdmin
             }
             else if (doc_document_dialog.Equals("DocPdf"))
             {
-                if (!XmlToHtml.GetTemplateFileAsStringForDocPdf(out o_template_file_string, out error_message))
+                //QQ 20230930 if (!XmlToHtml.GetTemplateFileAsStringForDocPdf(out o_template_file_string, out error_message))
+                //QQ 20230930 {
+                //QQ 20230930 o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
+                //QQ 20230930 return false;
+                //QQ 20230930 }
+
+                if (!XmlToHtml.GenerateTemplateFileAsStringForDocPdf(i_n_concerts, out o_template_file_string, out error_message))
                 {
                     o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
                     return false;
@@ -956,9 +989,15 @@ namespace JazzAppAdmin
             }
             else if (doc_document_dialog.Equals("XlsPdf"))
             {
-                if (!XmlToHtml.GetTemplateFileAsStringForXlsPdf(out o_template_file_string, out error_message))
+                //QQ 20230930 if (!XmlToHtml.GetTemplateFileAsStringForXlsPdf(out o_template_file_string, out error_message))
+                //QQ 20230930 {
+                //QQ 20230930 o_error = @"Intranet.GetTemplateFileAsStringJazzDoc " + error_message;
+                //QQ 20230930 return false;
+                //QQ 20230930 }
+
+                if (!XmlToHtml.GenerateTemplateFileAsStringForXlsPdf(i_n_concerts, out o_template_file_string, out error_message))
                 {
-                    o_error = @"Intranet.GetTemplateFileAsStringJazzDoc " + error_message;
+                    o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
                     return false;
                 }
             }
@@ -1254,7 +1293,7 @@ namespace JazzAppAdmin
         #endregion // Help functions for the creation and upload of document HTM files
 
         #region Template file contents as a strings for concert and concert-poster web pages
-
+        /*QQ20230930
         /// <summary>Get template file contents as a strings for concert and concert-poster web pages
         /// <para>Call of function XmlToHtml.GetTemplateFilesAsStringsForConcertWebPages</para>
         /// <para</para>
@@ -1281,7 +1320,8 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFilesConcertWebPagesAsStrings
-
+        QQ20230930*/
+        /*QQ20230930
         /// <summary>Replace strings in the input/output string that will become the content of a document HTM file
         /// <para>1. Call of XmlToHtml.ReplaceBandname</para>
         /// <para>2. Call of XmlToHtml.ReplaceConcertDate</para>
@@ -1370,7 +1410,7 @@ namespace JazzAppAdmin
             return true;
 
         } // HtmlConcertWebPagesReplaceStrings  
-
+        QQ20230930*/
         #endregion // Template file contents as a strings for concert and concert-poster web pages
 
         #region Create the output concert web pages and upload the two files to the server

@@ -36,21 +36,21 @@ namespace JazzAppAdmin
         }; // m_htm_template_file_names
 
         /// <summary>Returns the filename for the DOC-PDF-IMG template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameDocPdfImg() { return m_htm_template_file_names[0]; }
+        //QQ 20230930 static public string GetFilenameDocPdfImg() { return m_htm_template_file_names[0]; }
         /// <summary>Returns the filename for the DOC-PDF template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameDocPdf() { return m_htm_template_file_names[1]; }
+        //QQ 20230930 static public string GetFilenameDocPdf() { return m_htm_template_file_names[1]; }
         /// <summary>Returns the filename for the XLS-PDF template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameXlsPdf() { return m_htm_template_file_names[2]; }
+        //QQ 20230930 static public string GetFilenameXlsPdf() { return m_htm_template_file_names[2]; }
         /// <summary>Returns the filename for the Konzert template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameKonzert() { return m_htm_template_file_names[3]; }
+        //QQ 20230930 static public string GetFilenameKonzert() { return m_htm_template_file_names[3]; }
         /// <summary>Returns the filename for the KonzertPlakat template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameKonzertPlakat() { return m_htm_template_file_names[4]; }
+        //QQ 20230930 static public string GetFilenameKonzertPlakat() { return m_htm_template_file_names[4]; }
         /// <summary>Returns the filename for the DokumentSaison template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameDokumentSaison() { return m_htm_template_file_names[5]; }
+        //QQ 20230930 static public string GetFilenameDokumentSaison() { return m_htm_template_file_names[5]; }
         /// <summary>Returns the filename for the DokumentSaisonHeader template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameDokumentSaisonHeader() { return m_htm_template_file_names[6]; }
+        //QQ 20230930 static public string GetFilenameDokumentSaisonHeader() { return m_htm_template_file_names[6]; }
         /// <summary>Returns the filename for the DokumentSaisonRow template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameDokumentSaisonRow() { return m_htm_template_file_names[7]; }
+        //QQ 20230930 static public string GetFilenameDokumentSaisonRow() { return m_htm_template_file_names[7]; }
         /// <summary>Returns the filename for the JavaScript file used to create the season jazz program web page. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
         static public string GetFilenameScriptJazzProgram() { return m_htm_template_file_names[8]; }
 
