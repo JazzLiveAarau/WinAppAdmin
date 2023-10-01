@@ -77,6 +77,7 @@ namespace JazzAppAdmin
             @"DokumentQrCodes.htm", // 10
             @"DokumentPostersInternet.htm", // 11
             @"DokumentFlyersPrintshop.htm", // 12
+            @"DokumentPostersInternetB.htm", // 13
 
         }; // m_htm_file_names
 
@@ -108,6 +109,9 @@ namespace JazzAppAdmin
 
         /// <summary>Returns the name of the flyer info html file</summary>
         static public string GetDocumentFlyersPrintshopHtmFileName() { return m_htm_file_names[12]; }
+
+        /// <summary>Returns the name of the posters Internet html file</summary>
+        static public string GetDocumentPostersInternetBHtmFileName() { return m_htm_file_names[13]; }
 
         /// <summary>Local directory for HTM files</summary>
         private static string m_local_dir_htm_files = @"HtmFiles";
@@ -224,7 +228,7 @@ namespace JazzAppAdmin
 
         } // GetFullLocalHtmlFileNameForContract
 
-        /// <summary>Returns the full file name for the poster Internet HTM file</summary>
+        /// <summary>Returns the full file name for the poster A Internet HTM file</summary>
         public static string GetFullLocalHtmlFileNameForPosterInternet()
         {
             string ret_full_filename = @"";
@@ -234,6 +238,17 @@ namespace JazzAppAdmin
             return ret_full_filename;
 
         } // GetFullLocalHtmlFileNameForPosterInternet
+
+        /// <summary>Returns the full file name for the poster B Internet HTM file</summary>
+        public static string GetFullLocalHtmlFileNameForPosterInternetB()
+        {
+            string ret_full_filename = @"";
+
+            ret_full_filename = GetFullLocalHtmlFileName(GetDocumentPostersInternetBHtmFileName());
+
+            return ret_full_filename;
+
+        } // GetFullLocalHtmlFileNameForPosterInternetB
 
         /// <summary>Returns the full file name for the local season program HTM file</summary>
         public static string GetFullLocalHtmlFileNameForSeasonProgram()

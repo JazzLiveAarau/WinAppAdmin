@@ -170,6 +170,7 @@ namespace JazzAppAdmin
             }
 
             string error_message = @"";
+
             if (!XmlToHtml.InitXmlToHtml(season_document, out error_message))
             {
                 o_error = @"Intranet.UpdateIntranetSeasonConcertFiles " + error_message;
@@ -332,58 +333,6 @@ namespace JazzAppAdmin
         } // GetDocumentsYear
 
         #endregion // Initialization of XML for season programs (JazzProgramm_20XX_20YY.xml) and documents (JazzDokumente_20XX_20YY.xml)
-
-        #region Create and upload concert web page html files
-
-        /* QQ20230930
-        /// <summary>Main function for create and upload of concert web page html files
-        /// <para>1. Get content of template files as strings. Call of GetTemplateFilesConcertWebPagesAsStrings.</para>
-        /// <para>2.</para>
-        /// <para></para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="o_error">Error description</param>
-        private static bool HtmlConcertWebPagesCreateUpload(out string o_error)
-        {
-            o_error = @"";
-
-            string error_message = @"";
-
-            string template_file_concert_string = @"";
-            string template_file_concert_poster_string = @"";
-
-            if (!GetTemplateFilesConcertWebPagesAsStrings(out template_file_concert_string, out template_file_concert_poster_string, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
-                return false;
-            }
-
-            for (int concert_number=1; concert_number<=12; concert_number++)
-            {
-                string current_template_file_concert_string = template_file_concert_string;
-                string current_template_file_concert_poster_string = template_file_concert_poster_string;
-
-                if (!HtmlConcertWebPagesReplaceStrings(ref current_template_file_concert_string, ref current_template_file_concert_poster_string, concert_number, out error_message))
-                {
-                    o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
-                    return false;
-                }
-
-                if (!HtmlConcertWebPagesCreateUpload(current_template_file_concert_string, current_template_file_concert_poster_string, concert_number, out error_message))
-                {
-                    o_error = @"Intranet.HtmlConcertDocumentsCreateUpload " + error_message;
-                    return false;
-                }
-
-           } // concert_number
-
-
-            return true;
-
-        } // HtmlConcertWebPagesCreateUpload  
-        QQ20230930 */
-
-        #endregion // Create and upload concert web page html files
 
         #region Create and upload the QR codes html file
 
@@ -557,30 +506,15 @@ namespace JazzAppAdmin
             string season_header_start_template_file_string = @"";
             string season_row_start_template_file_string = @"";
 
-            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaison(out season_start_template_file_string, out o_error))
-            //QQ20230930 {
-            //QQ20230930 return false;
-            //QQ20230930 }
-
             if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaison(out season_start_template_file_string, out o_error))
             {
                 return false;
             }
 
-            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonHeader(out season_header_start_template_file_string, out o_error))
-            //QQ20230930 {
-            //QQ20230930 return false;
-            //QQ20230930 }
-
             if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaisonHeader(out season_header_start_template_file_string, out o_error))
             {
                 return false;
             }
-
-            //QQ20230930 if (!XmlToHtml.GetTemplateFileAsStringForDokumentSaisonRow(out season_row_start_template_file_string, out o_error))
-            //QQ20230930 {
-            //QQ20230930 return false;
-            //QQ20230930 }
 
             if (!XmlToHtml.GenerateTemplateFileAsStringForDokumentSaisonRow(out season_row_start_template_file_string, out o_error))
             {
@@ -1272,6 +1206,10 @@ namespace JazzAppAdmin
             {
                 local_file_name_with_path = HtmVorlagen.GetFullLocalHtmlFileNameForPosterInternet();
             }
+            else if (i_template.TemplateName.Equals(JazzXml.GetTemplateNamePosterInternetB()))
+            {
+                local_file_name_with_path = HtmVorlagen.GetFullLocalHtmlFileNameForPosterInternetB();
+            }
             else
             {
                 o_error = @"Intranet.HtmlConcertDocumentCreateUpload Get full file name not yet implemented for template name= " + i_template.TemplateName;
@@ -1291,127 +1229,6 @@ namespace JazzAppAdmin
         } // HtmlConcertDocumentCreateUpload  
 
         #endregion // Help functions for the creation and upload of document HTM files
-
-        #region Template file contents as a strings for concert and concert-poster web pages
-        /*QQ20230930
-        /// <summary>Get template file contents as a strings for concert and concert-poster web pages
-        /// <para>Call of function XmlToHtml.GetTemplateFilesAsStringsForConcertWebPages</para>
-        /// <para</para>
-        /// </summary>
-        /// <param name="o_template_file_string">Output file content</param>
-        /// <param name="o_template_doc">Output template object corresponding to i_doc</param>
-        /// <param name="i_doc">Input concert object</param>
-        /// <param name="o_error">Error description</param>
-        private static bool GetTemplateFilesConcertWebPagesAsStrings(out string o_template_file_concert_string, out string o_template_file_concert_poster_string, out string o_error)
-        {
-            o_error = @"";
-            o_template_file_concert_string = @"";
-            o_template_file_concert_poster_string = @"";
-
-            string error_message = @"";
-
-            if (!XmlToHtml.GetTemplateFilesAsStringsForConcertWebPages(out o_template_file_concert_string, out o_template_file_concert_poster_string, out error_message))
-            {
-                o_error = @"Intranet.GetTemplateFilesConcertWebPagesAsString " + error_message;
-                return false;
-            }
-
-            // GetTemplateFilesAsStringsForConcertWebPage(out string o_template_file_concert_string, out string o_template_file_concert_poster_string, out string o_error)
-            return true;
-
-        } // GetTemplateFilesConcertWebPagesAsStrings
-        QQ20230930*/
-        /*QQ20230930
-        /// <summary>Replace strings in the input/output string that will become the content of a document HTM file
-        /// <para>1. Call of XmlToHtml.ReplaceBandname</para>
-        /// <para>2. Call of XmlToHtml.ReplaceConcertDate</para>
-        /// <para>3. Call of XmlToHtml.ReplacePublished</para>
-        /// <para>4. Calls of XmlToHtml.ReplacePathFileNameDoc, ReplacePathFileNameXls, ReplacePathFileNamePdf, ReplacePathFileNameTxt, ReplacePathFileNameImg</para>
-        /// <para>5. Calls of XmlToHtml.ReplaceDocumentTemplateDescription, ReplaceDocumentDialogTitle, ReplaceDocumentSeasonYears for i_concert_number=1</para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="io_template_file_concert_string">Input/output string concert</param>
-        /// <param name="io_template_file_concert_poster_string">Input/output string concert-poster</param>
-        /// <param name="i_concert_number">Concert number</param>
-        /// <param name="o_error">Error description</param>
-        public static bool HtmlConcertWebPagesReplaceStrings(ref string io_template_file_concert_string, ref string io_template_file_concert_poster_string, int i_concert_number, out string o_error)
-        {
-            o_error = @"";
-
-            string error_message = @"";
-
-            if (i_concert_number <= 0)
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings Input concert number= " + i_concert_number.ToString() + @" <= 0";
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceBandnameLoopIndex(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceConcertDateLoopIndex(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplacePremisesNameAddress(ref io_template_file_concert_string, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceListMusiciansInstruments(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceShortText(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceListMusiciansTexts(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceLinkBandWebsite(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceLinkSoundSample(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceLinkSmallPosterNoPath(ref io_template_file_concert_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-            if (!XmlToHtml.ReplaceLinkImgPosterConcert(ref io_template_file_concert_poster_string, i_concert_number, out error_message))
-            {
-                o_error = @"Intranet.HtmlConcertWebPagesReplaceStrings " + error_message;
-                return false;
-            }
-
-
-            return true;
-
-        } // HtmlConcertWebPagesReplaceStrings  
-        QQ20230930*/
-        #endregion // Template file contents as a strings for concert and concert-poster web pages
 
         #region Create the output concert web pages and upload the two files to the server
 
