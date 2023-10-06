@@ -476,7 +476,7 @@ namespace JazzAppAdmin
         static public string ToolTipReqXmlNoDates = @"Text für den Fall, dass das Programm komplett ist.";
 
         /// <summary>Tool tip for the dates text</summary>
-        static public string ToolTipReqXmlDatesText = @"Dieser Text kommt vor die Tabelle mit Konzertdaten der nächste Saison." + NewLine() +
+        static public string ToolTipReqXmlDatesText = @"Dieser Text kommt vor die Tabelle mit Konzertdaten der nächsten Saison." + NewLine() +
                                                       @"Die Konzertdaten sollen hier nicht eingegeben werden. Die Web " + NewLine() +
                                                       @"Applikation Homepage fügt die Konzertdaten-Tabelle hinzu.";
 
