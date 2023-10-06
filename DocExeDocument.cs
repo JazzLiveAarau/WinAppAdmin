@@ -804,6 +804,7 @@ namespace JazzAppAdmin
 
             if (!OpenSaveDialog.Upload(file_path, upload_file_name, i_case_extensions, file_extensions, i_admin_file, GetCreateBackupDocument(), out cancel_upload, out out_file_name_upload, out error_message))
             {
+                DeleteClickFileName(i_file_ext, i_text_box_file_name);
                 DeleteTextBoxFileName(i_text_box_file_name);
                 i_textbox_message.Text = error_message;
                 return false;
@@ -811,6 +812,7 @@ namespace JazzAppAdmin
 
             if (cancel_upload)
             {
+                DeleteClickFileName(i_file_ext, i_text_box_file_name);
                 DeleteTextBoxFileName(i_text_box_file_name);
                 i_textbox_message.Text = DocAdminString.MsgFileUploadCancelled;
                 return false;

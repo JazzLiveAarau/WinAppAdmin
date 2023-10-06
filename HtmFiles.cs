@@ -58,12 +58,12 @@ namespace JazzAppAdmin
         /// </summary>
         static private string[] m_htm_file_names =
         {
-            @"JazzBisher.htm", // 0 
+            @"JazzBisher.htm", // 20231001 No longer used
 
         }; // m_htm_file_names
 
         /// <summary>Returns the filename for the jazz-concerts-up-to-now  file. The name is defined in the array HtmFiles.m_htm_file_names</summary>
-        static public string GetFilenameBisher() { return m_htm_file_names[0]; }
+        //QQ QQ20231001 static public string GetFilenameBisher() { return m_htm_file_names[0]; }
 
         /// <summary>Local directory for HTM files</summary>
         private static string m_local_dir_htm_files = @"HtmFiles";
@@ -75,6 +75,7 @@ namespace JazzAppAdmin
         /// <summary>Server directory for www HTM files</summary>
         public static string ServerWwwDirHtmlFiles { get { return m_server_dir_www_htm_files; } }
 
+        /*QQ20231001
         /// <summary>Returns the full file name for the local HTM file.</summary>
         private static string GetFullLocalHtmlFileName(string i_filename)
         {
@@ -87,6 +88,7 @@ namespace JazzAppAdmin
             return ret_filename;
         } // GetFullLocalHtmlFileName
 
+        
         /// <summary>Returns the full file name for the local jazz-concerts-up-to-now file HTM file</summary>
         public static string GetFullLocalHtmlFileNameForBisher()
         {
@@ -97,6 +99,7 @@ namespace JazzAppAdmin
             return ret_full_filename;
 
         } // GetFullLocalHtmlFileNameForBisher
+        
 
         /// <summary>Returns the full URL name for the jazz-concerts-up-to-now file HTM file</summary>
         public static string GetFullServerBisherHtmlFileName(string i_filename)
@@ -107,7 +110,7 @@ namespace JazzAppAdmin
 
             return ret_url;
         } // GetFullServerBisherHtmlFileName
-
+        QQ20231001*/
 
         /// <summary>Initialization of the array HtmlFiles (m_html_files)
         /// <para></para>
@@ -118,19 +121,19 @@ namespace JazzAppAdmin
             o_error = @"";
 
             // Number of elements
-            m_html_files = new JazzHtml[2];
-
+            m_html_files = new JazzHtml[1];
+            
             // Start JazzHtml index 0
             JazzHtml BisherHtml = new JazzHtml();
-            BisherHtml.FileName = GetFilenameBisher();
-            BisherHtml.Description = @"Die Datei " + GetFilenameBisher() + @"zeigt alle vorherige Konzerte auf der Homepage";
+            BisherHtml.FileName = "BisherNoLongerUsed.htm"; // QQ20231001 GetFilenameBisher();
+            BisherHtml.Description = @"Die Datei BisherNoLongerUsed.htm " + @"zeigt alle vorherige Konzerte auf der Homepage";
             BisherHtml.FileType = @"web";
             BisherHtml.ExtensionCase = @"htm";
             BisherHtml.Extensions = @"htm";
             BisherHtml.LocalPath = LocalDirHtmlFiles;
             BisherHtml.ServerPath = ServerWwwDirHtmlFiles;
             string[] infos_bisher = new string[1];
-            infos_bisher[0] = @"Die Datei " + GetFilenameBisher() + @" soll mit Microsoft Word geändert werden";
+            infos_bisher[0] = @"Die Datei BisherNoLongerUsed.htm " + @" soll mit Microsoft Word geändert werden";
             BisherHtml.Informations = infos_bisher;
             BisherHtml.TemplateFlag = false;
             BisherHtml.TemplateServerPath = @"";
@@ -138,6 +141,7 @@ namespace JazzAppAdmin
             m_html_files[0] = BisherHtml;
             // End JazzHtml index 0
 
+            /*C
             // Start JazzHtml index 1
             JazzHtml SeasonProgramHtml = new JazzHtml();
             SeasonProgramHtml.FileName = HtmVorlagen.GetSeasonProgramHtmFileName();
@@ -148,7 +152,7 @@ namespace JazzAppAdmin
             SeasonProgramHtml.LocalPath = HtmVorlagen.LocalDirHtmlFiles;
             SeasonProgramHtml.ServerPath = HtmVorlagen.ServerWwwDirHtmlFiles;
             string[] infos_season_program = new string[2];
-            infos_season_program[0] = @"Die JavaScript " + HtmVorlagen.GetFilenameScriptJazzProgram() + @" wird für diese Datei verwendet";
+            infos_season_program[0] = @"... ";
             infos_season_program[1] = @"...";
             SeasonProgramHtml.Informations = infos_season_program;
             SeasonProgramHtml.TemplateFlag = false;
@@ -156,6 +160,7 @@ namespace JazzAppAdmin
             SeasonProgramHtml.FileNameForTemplate = @"";
             m_html_files[1] = SeasonProgramHtml;
             // End JazzHtml index 1
+            QQ20231001 */
 
             /*TODO  Other FTP upload and download functions must be used 
             // Start JazzHtml index 2

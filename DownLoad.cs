@@ -300,6 +300,7 @@ namespace JazzAppAdmin
             return b_down_load;
         } // DownloadXmlTemplates
 
+        /* QQ20231001
         /// <summary>Download all HTM template from the server with FTP
         /// <para>1. The function checks if there is an Internet connection.</para>
         /// <para>2. The HTM templates are downloaded with function Getfiles in class Ftp.DownLoad.</para>
@@ -378,8 +379,9 @@ namespace JazzAppAdmin
 
             return b_down_load;
         } // DownloadOneHtmTemplate
+        */
 
-
+        /*QQ20231001
         /// <summary>Returns the path to the local HTM template files directory
         /// <para></para>
         /// </summary>
@@ -389,7 +391,9 @@ namespace JazzAppAdmin
 
             return ret_path;
         } // GetLocalFullFilenameHtmTemplate
+        QQ20231001*/
 
+        /*QQ20231001
         /// <summary>Returns the local full file name (i.e. with path) to an HTM template file
         /// <para></para>
         /// </summary>
@@ -403,7 +407,7 @@ namespace JazzAppAdmin
             return ret_full_name;
 
         } // GetLocalFullFilenameHtmTemplate
-
+        QQ20231001*/
 
         /// <summary>FTP download of one file that is in a subdirectory to /appadmin/JazzAppAdmin/ on the server. 
         /// <para>The FTP host name and directory are retrived from JazzAppAdminSettings. Password is hardcoded (Main.FtpAdminPassword)</para>

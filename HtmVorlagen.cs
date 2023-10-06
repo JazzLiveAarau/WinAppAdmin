@@ -17,6 +17,7 @@ namespace JazzAppAdmin
     {
         #region HTM template file names
 
+        /*QQ 20231001
         /// <summary>Defines the names of HTM template and JavaScript files used for the creation of XML to HTM files
         /// <para></para>
         /// <para></para>
@@ -34,6 +35,7 @@ namespace JazzAppAdmin
             @"JazzProgramm.js", // 8
 
         }; // m_htm_template_file_names
+        QQ 20231001 */
 
         /// <summary>Returns the filename for the DOC-PDF-IMG template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
         //QQ 20230930 static public string GetFilenameDocPdfImg() { return m_htm_template_file_names[0]; }
@@ -52,10 +54,10 @@ namespace JazzAppAdmin
         /// <summary>Returns the filename for the DokumentSaisonRow template file. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
         //QQ 20230930 static public string GetFilenameDokumentSaisonRow() { return m_htm_template_file_names[7]; }
         /// <summary>Returns the filename for the JavaScript file used to create the season jazz program web page. The name is defined in the array HtmVorlagen.m_htm_template_file_names</summary>
-        static public string GetFilenameScriptJazzProgram() { return m_htm_template_file_names[8]; }
+        //QQ 20230930 static public string GetFilenameScriptJazzProgram() { return m_htm_template_file_names[8]; }
 
         #endregion // HTM template file names
-   
+
         #region Output document HTM file names and local path
 
         /// <summary>Defines the names of document HTM output files
@@ -335,9 +337,9 @@ namespace JazzAppAdmin
         public static string ServerWwwDirHtmlFiles { get { return m_server_dir_www_htm_files; } }
 
         /// <summary>Server directory for template HTM files</summary>
-        private static string m_server_dir_template_htm_files = @"/HtmVorlagen/";
+        //QQ20231001 private static string m_server_dir_template_htm_files = @"/HtmVorlagen/";
         /// <summary>Server directory for template HTM files</summary>
-        public static string ServerTemplateDirHtmlFiles { get { return m_server_dir_template_htm_files; } }
+        //QQ20231001 public static string ServerTemplateDirHtmlFiles { get { return m_server_dir_template_htm_files; } }
 
         /// <summary>Returns the full URL name for the server document HTM file</summary>
         public static string GetFullServerConcertHtmlFileName(string i_filename)
@@ -349,6 +351,7 @@ namespace JazzAppAdmin
             return ret_url;
         } // GetFullServerHtmlFileName
 
+        /*20231001
         /// <summary>Returns the full URL name for the saison program HTM file</summary>
         public static string GetFullServerSaisonProgramHtmlFileName(string i_filename)
         {
@@ -358,6 +361,7 @@ namespace JazzAppAdmin
 
             return ret_url;
         } // GetFullServerSaisonProgramHtmlFileName
+        20231001*/
 
         #endregion // Output concert HTM file names and server path
 

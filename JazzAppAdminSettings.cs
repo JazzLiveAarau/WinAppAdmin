@@ -67,13 +67,13 @@ namespace JazzAppAdmin
         public string DirXmlTemplates = @"XmlVorlagen";
 
         /// <summary>Directory name for HTM templates</summary>
-        public string DirHtmTemplates = @"HtmVorlagen";
+        //QQ20231001 public string DirHtmTemplates = @"HtmVorlagen";
 
         /// <summary>File name for jazz program template</summary>
         public string FileXmlTemplateSeasonProgram = @"JazzProgramm_template.xml";
 
         /// <summary>File name for jazz program template with jscript functions</summary>
-        public string FileHtmTemplateJscriptFunctions = @"JazzProgramm.js";
+        //QQ20231001 public string FileHtmTemplateJscriptFunctions = @"JazzProgramm.js";
 
         /// <summary>Directory name for the installer of a new version</summary>
         public string DirNewVersion = @"NeueVersion";
@@ -800,13 +800,17 @@ namespace JazzAppAdmin
             "\r\nXML ist eine Datei, die Daten in Tabellenform enthält und ist sowohl von Menschen als auch von" +
             "\r\nMaschinen lesbar." +
             "\r\nAdmin XML-Daten sind z.B. ‘Name des Konzerts’, ‘Datum’ und ‘Musikernamen’ und werden auf" +
-            "\r\nHomepage sowie App gezeigt.";
+            "\r\nHomepage gezeigt.";
 
-        /// <summary>Tool tip edit HTML</summary>
-        public string ToolTipUpdateWebsite = @"Hier klicken um Website und Intranet (HTM-Dateien) zu aktualisieren." +
-            "\r\nJede Homepage und Intranet Webseite ist von einer HTM-Datei definiert." +
-             "\r\nEin HTM-Code definiert, wie z.B. Konzertdaten auf der Homepage präsentiert werden." +
-            "\r\nFür viele JAZZ live AARAU Webseiten kommen die Daten von XML-Dateien.";
+        /// <summary>Tool tip update website (actually only Intranet Documents</summary>
+
+        public string ToolTipUpdateWebsite = @"Hier klicken um Intranet Dokumente (HTM-Dateien) zu aktualisieren.";
+        /*QQ20231001
+        @"Hier klicken um Website und Intranet (HTM-Dateien) zu aktualisieren." +
+        "\r\nJede Homepage und Intranet Webseite ist von einer HTM-Datei definiert." +
+         "\r\nEin HTM-Code definiert, wie z.B. Konzertdaten auf der Homepage präsentiert werden." +
+        "\r\nFür viele JAZZ live AARAU Webseiten kommen die Daten von XML-Dateien.";
+        QQ20231001*/
 
         /// <summary>Tool tip documents (DOC)</summary>
         public string ToolTipDocuments = @"Hier klicken um Jazz-Dokumente hoch- und herunterzuladen";
@@ -829,12 +833,12 @@ namespace JazzAppAdmin
         QQQ*/
 
 
-        /// <summary>Tool tip create and upload posters for homepage, newsletter and app</summary>
-        public string ToolTipCreateUploadPosters = @"Plakate für Homepage, Newsletter und App werden kreiert und zum Server hochgeladen." +
+        /// <summary>Tool tip create and upload posters for homepage and newsletter</summary>
+        public string ToolTipCreateUploadPosters = @"Plakate für Homepage und Newsletter werden kreiert und zum Server hochgeladen." +
                                                    "\r\nStartplakat ist das Plakat als Bild (JPG-Format), das mit der Dokument-Funktion hochgeladen ist. " +
                                                    "\r\nMit dem Start-Plakatbild wird zwei kleinere Bilder kreiert. Diese kleinere Bilder werden hochgeladen." +
                                                    "\r\nDiese Funktion muss man nur anrufen, wenn ein Plakat geändert ist." +
-                                                   "\r\nNach Aktualisierung bitte Website, Newsletter und App kontrollieren.";
+                                                   "\r\nNach Aktualisierung bitte Website und Newsletter kontrollieren.";
 
         /// <summary>Tool tip upload photos</summary>
         public string ToolTipUploadPhotos = @"Hier klicken um Fotos (JPG-Dateien) zu organisieren.";
@@ -905,7 +909,7 @@ namespace JazzAppAdmin
         /// <summary>Tool tip request text on the homepage</summary
         public string ToolTipRequestsText = @"Editieren vom Anfrage-Text für die Homepage";
 
-        public string ToolTipSoundSampleForm = @"Hörbeispiel für die Homepage und die App." + "\r\n" +
+        public string ToolTipSoundSampleForm = @"Hörbeispiel für die Homepage." + "\r\n" +
                                                @"Nur mp3 und mp4 Dateien können aufgeladen werden." + "\r\n" +
                                                @"Die Name der Hörbeispiel-Datei wird von dieser Funktion bestimmt." + "\r\n" +
                                                @"Beim Aufladen wird automatisch ein QR-Code kreiert und aufgeladen." + "\r\n" +

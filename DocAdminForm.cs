@@ -130,7 +130,7 @@ namespace JazzAppAdmin
 
             DocAdmin.SetComboBoxConcertDocuments(m_combo_box_concert_documents);
 
-            DocAdmin.SetComboBoxHtmFiles(m_combo_box_htm_file);
+            DocAdmin.SetComboBoxHtmFiles(m_combo_box_htm_file);  //20231001 Not used for the moment 
 
             DocAdmin.SetComboBoxHelpFiles(m_combo_box_help_file);
 

@@ -41,6 +41,7 @@ namespace JazzAppAdmin
 
             m_season_document = i_season_document;
 
+            /* QQ20231001
             DownLoad down_load = new DownLoad();
             string error_message = "";
 
@@ -49,6 +50,7 @@ namespace JazzAppAdmin
                 o_error = JazzAppAdminSettings.Default.ErrMsgHtmTemplatesDownload;
                 return false;
             }
+            QQ20231001 */
 
             return true;
 
@@ -716,7 +718,7 @@ namespace JazzAppAdmin
         #endregion // Generate the content of a web document HTM template file as a string
 
         #region Functions for document and web page HTM template files
-
+        /* QQ20231001
         /// <summary>Get template file content as a string
         /// <para>This function is called by GetTemplateFileAsStringForDocPdfImg, GetTemplateFileAsStringForDocPdf and GetTemplateFileAsStringForXlsPdf</para>
         /// <para>The calling functions only sets the names of the template file. This template file names are defined in class HtmVorlagen.</para>
@@ -768,6 +770,7 @@ namespace JazzAppAdmin
             return true;
 
         } // GetTemplateFileAsString
+        QQ20231001*/
 
         #endregion Functions for document and web page HTM template files
 
