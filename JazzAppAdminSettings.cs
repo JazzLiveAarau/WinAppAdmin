@@ -441,6 +441,9 @@ namespace JazzAppAdmin
         /// <summary>Error message: A number cannot start with zero</summary>
         public string ErrMsgNumberCannotStartWithZero = @"Eine Zahl darf nicht mit null anfangen";
 
+        /// <summary>Error message: A minute string musst have two characters</summary>
+        public string ErrMsgMinuteLength = @"Minute muss mit zwei (2) Zahlen angegeben werden";
+
         /// <summary>Error message: A year must have 4 numbers</summary>
         public string ErrMsgYearNotFourNumbers = @"Jahr muss vier (4) Zahlen haben";
 

@@ -85,8 +85,13 @@ namespace JazzAppAdmin
             if (!CheckTimeNumber(hour_str, out o_error))
                 return false;
 
-            if (!CheckTimeNumber(minute_str, out o_error))
+            if (!CheckMinuteNumber(minute_str, out o_error))
                 return false;
+
+            if (minute_str.Substring(0,1).Equals("0"))
+            {
+                minute_str = minute_str.Substring(1);
+            }
 
             if(i_start)
             {
@@ -357,7 +362,44 @@ namespace JazzAppAdmin
 
         } // CheckTimeNumber
 
+        /// <summary>Check minute number string</summary>
+        static private bool CheckMinuteNumber(string i_time, out string o_error)
+        {
+            o_error = @"";
+            bool ret_check = true;
 
+            int ret_status = JazzXml.ValidNumber(i_time);
+
+            if (0 == ret_status)
+            {
+                ret_check = true;
+            }
+            else if (-2 == ret_status)
+            {
+                // Minutes is allowed to start with 0
+
+                ret_check = true;
+            }
+            else if (-1 == ret_status)
+            {
+                o_error = JazzAppAdminSettings.Default.ErrMsgAllCharsMustBeNumbers + @" (" + i_time + @")";
+                ret_check = false;
+            }
+            else
+            {
+                o_error = @"Concert.CheckMinuteNumber Error= " + ret_status.ToString() + @" (" + i_time + @")";
+                ret_check = false;
+            }
+
+            if (i_time.Length != 2)
+            {
+                o_error = JazzAppAdminSettings.Default.ErrMsgMinuteLength + @" (" + i_time + @")";
+                ret_check = false;
+            }
+
+            return ret_check;
+
+        } // CheckMinuteNumber
 
         #endregion // Write text functions
 
@@ -426,13 +468,44 @@ namespace JazzAppAdmin
         static public string GetStartHour() { return AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetStartHour(m_concert)); }
 
         /// <summary>Returns the start minute for the concert</summary>
-        static public string GetStartMinute() { return AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetStartMinute(m_concert)); }
+        static public string GetStartMinute() 
+        { 
+            string start_minute = AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetStartMinute(m_concert));
+
+            if (start_minute.Equals(""))
+            {
+                return start_minute;
+            }
+
+            if (start_minute.Length == 1)
+            {
+                start_minute = "0" + start_minute;
+            }
+
+            return start_minute; 
+        
+        }
 
         /// <summary>Returns the end hour for the concert</summary>
         static public string GetEndHour() { return AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetEndHour(m_concert)); }
 
         /// <summary>Returns the end minute for the concert</summary>
-        static public string GetEndMinute() { return AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetEndMinute(m_concert)); }
+        static public string GetEndMinute() 
+        {
+            string end_minute = AdminUtils.RemoveXmlUndefinedValue(JazzXml.GetEndMinute(m_concert));
+
+            if (end_minute.Equals(""))
+            {
+                return end_minute;
+            }
+
+            if (end_minute.Length == 1)
+            {
+                end_minute = "0" + end_minute;
+            }
+
+            return end_minute; 
+        }
 
         /// <summary>Returns the start time for the concert</summary>
         static public string GetStartTime() { return GetStartHour() + @":" + GetStartMinute(); }
