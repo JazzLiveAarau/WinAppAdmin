@@ -780,8 +780,9 @@ namespace JazzAppAdmin
 
         /// <summary>Tool tip administration program</summary>
         public string ToolTipAdmin = @"Applikation für Administration von JAZZ live AARAU Daten:" +
-            "\r\nXML-Dateien für App und Website, HTML-Dateien für Website" +
-             "\r\nund JPG-Dateien (Fotos) für Website und Slideshow";
+            "\r\nXML-Dateien, Hörbeispiele und Fotos für die Website." +
+             "\r\nDokumente, Plakate und Flyer für Intranet." +
+             "\r\nDie Applikation ist installiert im Ordner:\r\n";
 
         /// <summary>Tool tip help</summary>
         public string ToolTipHelp = @"Hier klicken um Hilfe zu erhalten." +

@@ -68,7 +68,10 @@ namespace JazzAppAdmin
         /// <summary>Set tool tips</summary>
         private void _SetToolTips()
         {
-            ToolTipAdmin.SetToolTip(this, JazzAppAdminSettings.Default.ToolTipAdmin);
+            string tool_tip_admin_exec_dir = JazzAppAdminSettings.Default.ToolTipAdmin + Environment.CurrentDirectory;
+            ToolTipAdmin.SetToolTip(this, tool_tip_admin_exec_dir);
+            ToolTipAdmin.SetToolTip(m_picture_box_text_logo, tool_tip_admin_exec_dir);
+            ToolTipAdmin.SetToolTip(m_label_admin, tool_tip_admin_exec_dir);
             ToolTipUtil.SetDelays(ref ToolTipAdmin);
             ToolTipHelp.SetToolTip(m_button_help, JazzAppAdminSettings.Default.ToolTipHelp);
             ToolTipUtil.SetDelays(ref ToolTipHelp);
